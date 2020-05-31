@@ -2,9 +2,29 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 
+import Header from "./components/Header";
+import Footer from "./components/Footer";
+import NewCase from "./components/NewCase";
+import OptionsBoard from "./components/OptionsBoard";
+
+var isNewCase = false;
+
+
 function App() {
-  return (
-    <div className="App">
+  return <div className="container">{renderNewCase()}</div>
+}
+
+function renderNewCase() {
+  if (isNewCase === true) {
+    return <NewCase />
+  } else {
+    return <OptionsBoard/>;
+  }
+}
+
+
+/**
+ * <div className="App">
       <header className="App-header">
         <img src={logo} className="App-logo" alt="logo" />
         <p>
@@ -20,7 +40,6 @@ function App() {
         </a>
       </header>
     </div>
-  );
-}
+ */
 
 export default App;
