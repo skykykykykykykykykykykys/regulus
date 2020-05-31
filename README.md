@@ -3,7 +3,12 @@ An app that helps handling dilemma situations.
 
 ## The Idea
 
+harusnya analisis tiap user, bukan per kolom jadinya lbh mudah buat analis.
+Iteratif tiap user.
+
+
 ### User 
+User analyze every characters consecutively.
     > Defines the characters
         User enters the number of chars exist,
         User enters the name of every chars,
@@ -20,6 +25,9 @@ An app that helps handling dilemma situations.
 
     > Compute the dilemmas: trust, rejection, and persuasion 
 
+
+### Addition
+    Can show whom doubts whom 
 
 
 ## References:
