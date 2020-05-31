@@ -10,12 +10,12 @@ Iteratif tiap user.
 ### User 
 User analyze every characters consecutively.
     > Defines the characters
-        User enters the number of chars exist,
-        User enters the name of every chars,
+        - User enters the number of chars exist,
+        - User enters the name of every chars,
     > Defines the characters options
-        User enters the options of every chars
+        - User enters the options of every chars
     > Defines the characters positions
-        User enters the 
+        - User enters the 
     > Defines the stated intentions of every chars
 
     > Defines doubts that exist on every characters positions
