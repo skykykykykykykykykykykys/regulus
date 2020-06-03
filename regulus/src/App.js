@@ -1,26 +1,46 @@
-import React from 'react';
+import React, { useState } from 'react';
 import logo from './logo.svg';
 import './App.css';
 
-import Header from "./components/Header";
-import Footer from "./components/Footer";
 import NewCase from "./components/NewCase";
 import OptionsBoard from "./components/OptionsBoard";
+import Header from "./components/Header";
+import Footer from './components/Footer';
 
-var isNewCase = false;
+
 
 
 function App() {
-  return <div className="container">{renderNewCase()}</div>
+  
+  return (
+    <div>
+      <Header/>
+      <div>
+        <NewCase/>
+      </div>
+      <Footer/>
+    </div>
+  );
+
+  /*const isNewCase = true;
+
+  function renderNewCase() {
+    if (isNewCase === true) {
+      return (
+          <NewCase />
+      );
+    } else {
+      return <OptionsBoard/>;
+    }
+  }
+
+  return (<div className="container">{
+      renderNewCase()
+    }</div>);
+    */
 }
 
-function renderNewCase() {
-  if (isNewCase === true) {
-    return <NewCase />
-  } else {
-    return <OptionsBoard/>;
-  }
-}
+
 
 
 /**
