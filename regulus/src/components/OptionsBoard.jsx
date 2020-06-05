@@ -20,13 +20,14 @@ import Button from '@material-ui/core/Button';
 
 function OptionsBoard(props) {
     console.log("masuk optionsboard");
-
+    /*
     const [state, setState] = useState({
         numChars: 0,
         charNames: [],
         charOptions:[],
         charPositions: []
     });
+    */
     const [numChars, setCharNum] = useState(0);
     const [charNames, setCharNames] = useState([]);
     const [charOptions, setCharOptions] = useState({
@@ -37,8 +38,9 @@ function OptionsBoard(props) {
     });
 
     function handleCharNum(event, output) {
+        console.log("ini output", output);
         setCharNum(output);
-        console.log(numChars);
+        console.log("ini numChars", numChars);
         //logika ngebuat state array dinamik
 
         var arrCharNames = [];
@@ -48,16 +50,18 @@ function OptionsBoard(props) {
         setCharNames(arrCharNames);
     }
 
-    function createCharNameField(index){
-        return (
-            <Grid>
-                <h1>Isi nama karakter:</h1>
-                <form>
-                    <TextField id="charNames" label="standard"/>
-                </form>
-            </Grid>
-        )
+    function handlecharNames(event) {
+        
+        console.log("ini output charName", event.target.value);
+
+
     }
+
+    function handleButtonOptions(event) {
+        event.preventDefault();
+        console.log("Button Options pressed!");
+    }
+
 
     function renderCharName(charNum) {
         //render text field buat ngisi nama karakter
@@ -65,18 +69,40 @@ function OptionsBoard(props) {
         return (
             <div className="charNameField">
                 <h1>Isi nama karakter:</h1>
-                
+                {charNames.length <= 0 ? "" : charNames.map((names, index) => {
+                    return (
+                        <Grid>
+                        <h1>Isi nama karakter ke-{index} :</h1>
+                        <TextField id={index} label="standard" onChange={handlecharNames(index)} />
+                        </Grid>
+                    );
+                })}
             </div>
         );
     }
-    /*
-        {charNames.map(names, index =>
-                    <Grid>
-                        <h1>Ini charNameField : {names}</h1>
-                        <TextField id={index} label="standard" onChange="..." />
-                    </Grid>
-                )}
-    */
+
+    function renderCharOptions() {
+        //render buat opsi2 apa saja yang dimiliki tiap karakter
+        return (
+            <div className="charOptionsField">
+                <form action="#">
+                    {charNames.length <= 0 ? "" : charNames.map((names, index) => {
+                            return (
+                                <Grid>
+                                <h1>Isi opsi karakter {names} :</h1>
+                                <TextField id={"opt-"+index} label="standard" />
+                                </Grid>
+                            );
+                        })}
+                <Button onClick={handleButtonOptions}/>
+                </form>
+            </div>
+        );
+    }
+
+    function renderCharPositions() {
+        
+    }
 
     return (
         <div >
