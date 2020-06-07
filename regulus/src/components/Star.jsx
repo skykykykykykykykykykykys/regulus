@@ -7,7 +7,6 @@ function Star(props) {
     for (let i=0; i<props.rates; i++) {
         x.push("");
     }
-    
     function renderStar() {
         return (
             <div>
@@ -19,12 +18,9 @@ function Star(props) {
             </div>
         )
     }
-
     return <div>
         {renderStar(x)}
     </div>
 }
-
-
 
 export default Star;
