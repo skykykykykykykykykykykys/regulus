@@ -6,16 +6,18 @@ import NewCase from "./components/NewCase";
 import OptionsBoard from "./components/OptionsBoard";
 import Header from "./components/Header";
 import Footer from './components/Footer';
-
+import Star from './components/Star';
 
 
 
 function App() {
-  
+  let rates = 9;
+
   return (
     <div>
       <Header/>
       <div>
+        <Star rates={rates}/>
         <NewCase/>
       </div>
       <Footer/>
